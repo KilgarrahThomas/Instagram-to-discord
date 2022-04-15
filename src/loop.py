@@ -28,8 +28,9 @@ class Loop:
 
     @staticmethod
     def __create_embed(post: Post, user: User) -> dhooks.Embed:
-        embed = dhooks.Embed(description=post.caption)
+        embed = dhooks.Embed(description=post.caption + '...')
         embed.color = 0xEC054C
+        embed.set_title('See on Instagram', 'https://www.instagram.com/p/' + post.short_code + "/")
         embed.set_image(post.image_url)
         embed.set_timestamp(time=post.timestamp)
         embed.set_footer(f'❤️ {post.likes} | 💬 {post.comments}')

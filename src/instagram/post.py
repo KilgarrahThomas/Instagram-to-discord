@@ -7,7 +7,11 @@ class Post:
 
     @property
     def caption(self) -> str:
-        return self.json['edge_media_to_caption']['edges'][0]['node']['text']
+        return self.json['edge_media_to_caption']['edges'][0]['node']['text'][0:30]
+
+    @property
+    def short_code(self) -> str:
+        return self.json["shortcode"]
 
     @property
     def image_url(self):
